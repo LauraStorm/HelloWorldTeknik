@@ -2,23 +2,26 @@ package com.example.springhalloworld.model;
 
 import javax.persistence.*;
 
-@Entity
-public class User {
+@Entity //Når man laver Entity skal man have et ID
+public class Bruger {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column
     private String username;
 
-    public User() {
+
+    //Default constructer
+    public Bruger() {
     }
 
-    public User(String username) {
+    //Til at oprette et nyt objekt uden at definere et id - det bliver generet automatisk
+    public Bruger(String username) {
         this.username = username;
     }
 
-    public User(Long id, String username) {
+    //Til at hente hele user objektet
+    public Bruger(Long id, String username) {
         this.id = id;
         this.username = username;
     }
