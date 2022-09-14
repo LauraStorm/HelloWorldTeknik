@@ -20,7 +20,6 @@ public class UserController {
 
     @GetMapping("/findAllUsers")
     public ResponseEntity<Set<Bruger>> getAllUsers (){
-        System.out.println("Hej - linj 23");
         //Gem listen
         Set<Bruger> allUsers = userService.findAll();
         return new ResponseEntity<>(allUsers, HttpStatus.OK);
